@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Music Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #000000; /* Black background */
+            color: #ffffff; /* White text */
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            overflow: auto;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-logo {
+            float: left;
+            padding: 8px 16px;
+        }
+        .navbar-logo img {
+            height: 50px; /* Adjust size as needed */
+        }
+        .navbar a {
+            float: left;
+            padding: 22px;
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            text-align: left;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.25); /* White with 25% transparency for glass effect */
+            backdrop-filter: blur(10px); /* Blur effect for the background */
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for a raised effect */
+            margin-top: 60px; /* Offset for navbar */
+        }
+        h1 {
+    /* Remove the color property since we're using a gradient background */
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+
+    /* Add the gradient background */
+    background-image: linear-gradient(to right, #3ad965, #f7dc6f); /* Green to yellow gradient */
+    -webkit-background-clip: text;
+    color: transparent; /* Make the text color transparent to show the gradient */
+}
+
+        form {
+            text-align: center;
+        }
+        label, input, textarea {
+            display: block;
+            margin-bottom: 25px;
+            color: #ffffff; /* White text */
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Light border */
+            outline: none;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white for inputs */
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        label {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        input[type="number"] {
+            width: auto;
+        }
+        input[type="submit"] {
+            background: #ff8a65; /* Warm coral accent color */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            border-radius: 10px;
+        }
+        input[type="submit"]:hover {
+            background: #f76c5e; /* Darker coral color on hover */
+        }
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        input, textarea:focus {
+            border-color: #ff8a65; /* Highlight with coral color on focus */
+        }
+        .sample-link {
+            text-decoration: none; /* Removes underline */
+            font-family: 'Poppins', sans-serif; /* Font family */
+            display: inline-block; /* Allows width and height */
+            padding: 15px 30px; /* Padding around text */
+            margin-top: 20px; /* Space above the link */
+            color: #ffffff; /* Text color */
+            background-color: #ff8a65; /* Background color */
+            border-radius: 25px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        /* Hover effect */
+        .sample-link:hover {
+            background-color: #d16d52; /* Darker shade on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-logo">
+            <!-- Placeholder for logo -->
+            <img src="/static/Pics/logo.png" alt="RSN Musical Logo">
+        </div>
+        <a href="#home"><h2>RSN Musical</h2></a>
+        <!-- Add other navigation links here -->
+    </div>
+
+    <!-- Container with Glass Effect -->
+    <div class="container">
+        <h1>Text to Music Generator</h1>
+        <form action="/generate_music" method="post">
+            <label for="description">Enter your description:</label>
+            <textarea id="description" name="description" placeholder="Describe the music you want to generate..." required></textarea>
+            <label for="duration">Select time duration (in seconds):</label>
+            <input type="number" id="duration" name="duration" min="0" max="20" value="10" required>
+            <input type="submit" value="Generate Music">
+            <!-- Add a link to the samples page -->
+            <a href="/sample" class="sample-link">Listen to Samples</a>
+
+        </form>
+    </div>
+</body>
+</html>
