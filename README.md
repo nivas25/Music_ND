@@ -19,6 +19,14 @@ Music_ND is a web-based interface that integrates Meta's **MusicGen** model to c
 - **Real-Time Music Creation**: Generate, listen, and download music dynamically.
 - **Customizable Parameters**: Adjust the input parameters such as genre, style, and structure to personalize the generated music.
 
+- 
+### Key Updates:
+- **MusicGen Model Section**: Added a detailed description of Meta's **MusicGen** model, including its real-time capabilities and customization features.
+- **Resources**: Included links to the official MusicGen repository and its research paper.
+
+This enhanced `README.md` provides a thorough overview of the project, including the integration of Meta's MusicGen model for music generation.
+
+
 ## Installation
 
 1. Clone the repository:
